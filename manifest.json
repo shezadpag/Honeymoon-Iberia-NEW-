@@ -2,7 +2,7 @@
   "name": "Portugal & Spain Honeymoon 2026",
   "short_name": "Honeymoon 2026",
   "description": "15-day honeymoon itinerary for Portugal & Spain",
-  "start_url": "./Portugal_Spain_Itinerary.html",
+  "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#1558d6",

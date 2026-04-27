@@ -1,7 +1,7 @@
-const CACHE='honeymoon-v1';
+const CACHE='honeymoon-v4';
 const ASSETS=[
   './',
-  './Portugal_Spain_Itinerary.html',
+  './index.html',
   'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css',
   'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js',
   'https://a.tile.openstreetmap.org/10/512/342.png'
