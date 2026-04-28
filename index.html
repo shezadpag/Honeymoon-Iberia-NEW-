@@ -14,13 +14,16 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .header{background:#fff;border-bottom:0.5px solid #e0ddd6;padding:16px 20px 0}
 .header h1{font-size:18px;font-weight:500;color:#1a1a1a;margin-bottom:12px}
 .city-tabs{display:flex;gap:4px;flex-wrap:wrap}
-.city-tab{padding:8px 16px;border-radius:8px 8px 0 0;border:0.5px solid #e0ddd6;border-bottom:none;background:#f4f3ef;color:#666;font-size:13px;cursor:pointer;transition:all 0.15s;white-space:nowrap}
-.city-tab.on{background:#fff;color:#1a1a1a;font-weight:500;border-color:#c8c5be}
-.city-panel{display:none;padding:16px 20px 32px}
+.city-tab{padding:8px 16px;border-radius:8px 8px 0 0;border:1px solid #e0ddd6;border-bottom:none;background:#f0ede8;color:#888;font-size:13px;cursor:pointer;transition:all 0.15s;white-space:nowrap}
+.city-tab:hover{background:#e8e4df;color:#444}
+.city-tab.on{background:#1a1a2e;color:#fff;font-weight:600;border-color:#1a1a2e}
+.city-panel{display:none;border-top:3px solid #1a1a2e}
 .city-panel.on{display:block}
-.day-tabs{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:16px}
-.day-tab{padding:5px 12px;border-radius:6px;border:0.5px solid #e0ddd6;background:#f4f3ef;color:#666;font-size:12px;cursor:pointer;transition:all 0.15s}
-.day-tab.on{background:#fff;color:#1a1a1a;font-weight:500;border-color:#c8c5be}
+.day-tabs{display:flex;gap:6px;flex-wrap:wrap;padding:12px 20px 10px;background:#f0ede8;border-bottom:1px solid #e0ddd6}
+.day-tab{padding:5px 14px;border-radius:20px;border:1.5px solid #d0cdc8;background:#fff;color:#888;font-size:12px;cursor:pointer;transition:all 0.15s;white-space:nowrap}
+.day-tab:hover{border-color:#93c5fd;color:#1558d6}
+.day-tab.on{background:#e8f0fe;color:#1558d6;font-weight:600;border-color:#93c5fd}
+.day-panel{background:#fff;padding:16px 20px 32px}
 .stats{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}
 .stat-p{background:#fff;border:0.5px solid #e0ddd6;border-radius:6px;padding:3px 9px;font-size:12px;color:#666}
 .stat-p span{color:#1a1a1a;font-weight:500}
@@ -122,15 +125,52 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .bgt-rate-note{font-size:11px;color:#ccc;padding:5px 4px 0;display:block}
 .budget-tab{background:#f9f4ff!important;color:#6b3fa0!important;border-color:#d8b4fe!important}
 .budget-tab.on{background:#6b3fa0!important;color:#fff!important}
+.rest-tab{background:#f0fdf4!important;color:#166534!important;border-color:#86efac!important}
+.rest-tab.on{background:#166534!important;color:#fff!important}
+/* Restaurants */
+.rest-panel{display:none;border-top:3px solid #166534}
+.rest-panel.on{display:block}
+.rest-head{padding:14px 20px 12px;background:#fff;border-bottom:1px solid #f0f0f0}
+.rest-title{font-size:17px;font-weight:700}
+.rest-subtitle{font-size:12px;color:#aaa;margin-top:2px}
+.rest-city-tabs{display:flex;gap:6px;flex-wrap:wrap;padding:10px 20px;background:#f0ede8;border-bottom:1px solid #e0ddd6}
+.rest-city-btn{padding:5px 14px;border-radius:20px;border:1.5px solid #d0cdc8;background:#fff;color:#888;font-size:12px;cursor:pointer;transition:all 0.15s;white-space:nowrap}
+.rest-city-btn:hover{border-color:#86efac;color:#166534}
+.rest-city-btn.on{background:#dcfce7;color:#166534;font-weight:600;border-color:#86efac}
+.rest-body{background:#fff;padding:16px 20px 32px}
+.rest-city-block{margin-bottom:24px}
+.rest-tbl{width:100%;border-collapse:collapse;font-size:13px}
+.rest-tbl th{text-align:left;padding:5px 8px;font-size:11px;color:#aaa;border-bottom:1.5px solid #ebebeb}
+.rest-tbl td{padding:8px 8px;border-bottom:1px solid #f5f5f5;vertical-align:middle}
+.rest-tbl tr:last-child td{border-bottom:none}
+.rest-tbl tr:hover td{background:#fafafa}
+.rest-name{font-weight:600;font-size:13px;color:#1a1a1a}
+.rest-hood{font-size:11px;color:#999;margin-top:1px}
+.rest-type{font-size:12px;color:#666}
+.rest-rating{font-size:12px;color:#f59e0b;font-weight:600;white-space:nowrap}
+.rest-price{font-size:12px;color:#888;white-space:nowrap}
+.rest-days{font-size:11px;color:#1558d6;white-space:nowrap}
+.rest-map{font-size:10px;font-weight:600;background:#e6f4ea;color:#1e6b35;padding:3px 8px;border-radius:5px;white-space:nowrap;text-decoration:none;display:inline-block}
+.rest-map:hover{background:#c8e6c9}
 .legend{font-size:11px;color:#aaa;text-align:center;padding:8px 0 16px}
 </style>
 </head>
 <body>
 <div class="header">
 <h1>Portugal &amp; Spain — Honeymoon 2026 &nbsp;🇵🇹🇪🇸</h1>
-<div class="city-tabs"><button class="city-tab" data-city="lisbon" onclick="showCity('lisbon')">🇵🇹 Lisbon</button><button class="city-tab" data-city="porto" onclick="showCity('porto')">Porto</button><button class="city-tab" data-city="bcn" onclick="showCity('bcn')">🇪🇸 Barcelona</button><button class="city-tab" data-city="ss" onclick="showCity('ss')">San Sebastián</button><button class="city-tab" data-city="madrid" onclick="showCity('madrid')">Madrid</button><button class="city-tab budget-tab" onclick="showBudget()">💰 Budget</button></div>
+<div class="city-tabs"><button class="city-tab" data-city="lisbon" onclick="showCity('lisbon')">🇵🇹 Lisbon</button><button class="city-tab" data-city="porto" onclick="showCity('porto')">Porto</button><button class="city-tab" data-city="bcn" onclick="showCity('bcn')">🇪🇸 Barcelona</button><button class="city-tab" data-city="ss" onclick="showCity('ss')">San Sebastián</button><button class="city-tab" data-city="madrid" onclick="showCity('madrid')">Madrid</button><button class="city-tab budget-tab" onclick="showBudget()">💰 Budget</button><button class="city-tab rest-tab" onclick="showRest()">🍽 Restaurants</button></div>
 </div>
 <div id="city-lisbon" class="city-panel"><div class="day-tabs"><button class="day-tab" data-day="ld1" data-city="lisbon" onclick="showDay('ld1','lisbon')">Day 1 · Sun 24 May · Arrival in Lisbon</button><button class="day-tab" data-day="ld2" data-city="lisbon" onclick="showDay('ld2','lisbon')">Day 2 · Mon 25 May · Belém & Chiado</button><button class="day-tab" data-day="ld3" data-city="lisbon" onclick="showDay('ld3','lisbon')">Day 3 · Tue 26 May · Sintra day trip</button><button class="day-tab" data-day="ld4" data-city="lisbon" onclick="showDay('ld4','lisbon')">Day 4 · Wed 27 May · Lisbon → Porto</button></div><div id="ld1" class="day-panel" style="display:none;"></div><div id="ld2" class="day-panel" style="display:none;"></div><div id="ld3" class="day-panel" style="display:none;"></div><div id="ld4" class="day-panel" style="display:none;"></div></div><div id="city-porto" class="city-panel"><div class="day-tabs"><button class="day-tab" data-day="pd5" data-city="porto" onclick="showDay('pd5','porto')">Day 5 · Thu 28 May · Porto — full day</button><button class="day-tab" data-day="pd6" data-city="porto" onclick="showDay('pd6','porto')">Day 6 · Fri 29 May · Porto → Barcelona</button></div><div id="pd5" class="day-panel" style="display:none;"></div><div id="pd6" class="day-panel" style="display:none;"></div></div><div id="city-bcn" class="city-panel"><div class="day-tabs"><button class="day-tab" data-day="bd7" data-city="bcn" onclick="showDay('bd7','bcn')">Day 7 · Sat 30 May · Barcelona — Modernisme day</button><button class="day-tab" data-day="bd8" data-city="bcn" onclick="showDay('bd8','bcn')">Day 8 · Sun 31 May · Barcelona — Gothic & El Born</button><button class="day-tab" data-day="bd9" data-city="bcn" onclick="showDay('bd9','bcn')">Day 9 · Mon 1 Jun · Barcelona → San Sebastián</button></div><div id="bd7" class="day-panel" style="display:none;"></div><div id="bd8" class="day-panel" style="display:none;"></div><div id="bd9" class="day-panel" style="display:none;"></div></div><div id="city-ss" class="city-panel"><div class="day-tabs"><button class="day-tab" data-day="sd10" data-city="ss" onclick="showDay('sd10','ss')">Day 10 · Tue 2 Jun · San Sebastián</button><button class="day-tab" data-day="sd11" data-city="ss" onclick="showDay('sd11','ss')">Day 11 · Wed 3 Jun · San Sebastián → Madrid</button></div><div id="sd10" class="day-panel" style="display:none;"></div><div id="sd11" class="day-panel" style="display:none;"></div></div><div id="city-madrid" class="city-panel"><div class="day-tabs"><button class="day-tab" data-day="md12" data-city="madrid" onclick="showDay('md12','madrid')">Day 12 · Thu 4 Jun · Madrid — art day</button><button class="day-tab" data-day="md13" data-city="madrid" onclick="showDay('md13','madrid')">Day 13 · Fri 5 Jun · Madrid — Retiro & the old masters</button><button class="day-tab" data-day="md14" data-city="madrid" onclick="showDay('md14','madrid')">Day 14 · Sat 6 Jun · Madrid — Royal Palace & Malasaña</button><button class="day-tab" data-day="md15" data-city="madrid" onclick="showDay('md15','madrid')">Day 15 · Sun 7 Jun · Madrid → Dubai</button></div><div id="md12" class="day-panel" style="display:none;"></div><div id="md13" class="day-panel" style="display:none;"></div><div id="md14" class="day-panel" style="display:none;"></div><div id="md15" class="day-panel" style="display:none;"></div></div>
+
+<!-- Restaurants panel -->
+<div id="rest-panel" class="rest-panel">
+  <div class="rest-head">
+    <div class="rest-title">🍽 Restaurant list</div>
+    <div class="rest-subtitle">From your Google Maps honeymoon list · ratings &amp; prices from Google</div>
+  </div>
+  <div id="rest-city-tabs" class="rest-city-tabs"></div>
+  <div id="rest-body" class="rest-body"></div>
+</div>
 
 <!-- Budget panel -->
 <div id="budget-panel" class="budget-panel">
@@ -272,6 +312,8 @@ function showCity(id){
   document.querySelectorAll('.city-tab').forEach(function(b){b.classList.remove('on');});
   var bp=document.getElementById('budget-panel');
   if(bp)bp.classList.remove('on');
+  var rp=document.getElementById('rest-panel');
+  if(rp)rp.classList.remove('on');
   var cp=document.getElementById('city-'+id);
   if(cp)cp.classList.add('on');
   var ct=document.querySelector('.city-tab[data-city="'+id+'"]');
@@ -386,9 +428,103 @@ function bDel(i){
   _bRender();
 }
 
+// ── RESTAURANTS ──────────────────────────────────────────────────────────────
+var RESTAURANTS=[
+  // ── Lisbon ──
+  {city:'Lisbon',name:'Comur a Conserveira de Portugal',hood:'Chiado',type:'Vintage canned goods shop & café',rating:'4.3',price:'€',days:'N/A'},
+  {city:'Lisbon',name:'Ginjinha Sem Rival',hood:'Rossio / Largo São Domingos',type:'Bar · ginjinha shots',rating:'4.7',price:'€1–5',days:'25–26 May'},
+  {city:'Lisbon',name:'Bonjardim',hood:'Intendente / Rossio',type:'Piri-piri chicken',rating:'4.1',price:'$$',days:'25 May'},
+  {city:'Lisbon',name:'Tapisco',hood:'Príncipe Real',type:'Petiscos / tapas fusion',rating:'4.3',price:'€50+',days:'25–26 May'},
+  {city:'Lisbon',name:'Time Out Market',hood:'Cais do Sodré',type:'Food hall · best of Lisbon under one roof',rating:'4.3',price:'€€',days:'25 May'},
+  // ── Porto ──
+  {city:'Porto',name:'Mercado do Bolhão',hood:'City Centre',type:'Market / food hall',rating:'4.5',price:'—',days:'28 May'},
+  {city:'Porto',name:'O Trevo',hood:'Bonjardim area',type:'Portuguese tasca',rating:'4.5',price:'€5–10',days:'28 May'},
+  {city:'Porto',name:'Duque',hood:'Clérigos',type:'Portuguese restaurant',rating:'4.5',price:'$$',days:'28 May'},
+  // ── Barcelona ──
+  {city:'Barcelona',name:'Xurreria Laietana',hood:'Gothic Quarter',type:'Churros / breakfast',rating:'4.7',price:'$',days:'30 May'},
+  {city:'Barcelona',name:'OiMà il crostone',hood:'Eixample',type:'Gourmet focaccia / café',rating:'4.9',price:'€1–10',days:'30 May'},
+  {city:'Barcelona',name:'Pistola',hood:'Gothic Quarter',type:'Catalan sandwich bar',rating:'4.5',price:'€10–20',days:'30–31 May'},
+  {city:'Barcelona',name:'El Xampanyet',hood:'El Born',type:'Tapas bar · homemade cava',rating:'4.7',price:'€20–30',days:'31 May'},
+  {city:'Barcelona',name:'Tiberi Bar',hood:'Sant Antoni / El Born',type:'Modern sharing plates',rating:'4.5',price:'€30–40',days:'31 May'},
+  {city:'Barcelona',name:'Mantegueries Pirenaiques',hood:'El Born',type:'Classic Catalan tapas',rating:'4.5',price:'€10–20',days:'31 May'},
+  {city:'Barcelona',name:'Estimar',hood:'El Born / Barceloneta',type:'Mediterranean seafood',rating:'4.3',price:'€100+',days:'31 May'},
+  {city:'Barcelona',name:'Vereda',hood:'Barcelona',type:'Restaurant',rating:'4.6',price:'—',days:'31 May'},
+  {city:'Barcelona',name:'La Barraca',hood:'Barceloneta',type:'Valencian / paella',rating:'4.3',price:'$$',days:'31 May'},
+  {city:'Barcelona',name:'Los Caracoles',hood:'Gothic Quarter',type:'Classic Barcelona restaurant',rating:'4.2',price:'$$$',days:'31 May'},
+  // ── San Sebastián ──
+  {city:'San Sebastián',name:'Bar Nestor',hood:'Old Town (Parte Vieja)',type:'Bar · tortilla + pintxos',rating:'4.6',price:'$$',days:'1–2 Jun'},
+  {city:'San Sebastián',name:'Ganbara',hood:'Old Town (Parte Vieja)',type:'Grill · mushroom & foie pintxos',rating:'4.3',price:'$$$',days:'1–2 Jun'},
+  {city:'San Sebastián',name:'BAR SPORT',hood:'Old Town (Parte Vieja)',type:'Classic pintxos bar',rating:'4.7',price:'€10–20',days:'1–2 Jun'},
+  {city:'San Sebastián',name:'Antonio taberna',hood:'Old Town (Parte Vieja)',type:'Bar · txakoli & pintxos',rating:'4.5',price:'$$',days:'1–2 Jun'},
+  {city:'San Sebastián',name:'La Cuchara de San Telmo',hood:'Old Town (Parte Vieja)',type:'Michelin-trained pintxos',rating:'4.6',price:'€10–20',days:'1–2 Jun'},
+  {city:'San Sebastián',name:'La Viña',hood:'Old Town (Parte Vieja)',type:'Basque · burnt cheesecake',rating:'4.4',price:'€1–10',days:'1–3 Jun'},
+  {city:'San Sebastián',name:'Borda Berri',hood:'Old Town (Parte Vieja)',type:'Michelin Bib Gourmand · pintxos',rating:'4.6',price:'€10–20',days:'2 Jun'},
+  {city:'San Sebastián',name:'Atari Gastrolekua',hood:'Old Town (Parte Vieja)',type:'Relaxed tapas bar',rating:'4.5',price:'€10–20',days:'2–3 Jun'},
+  {city:'San Sebastián',name:'Casa Cámara',hood:'Old Town',type:'Basque fine dining',rating:'4.6',price:'$$$',days:'2 Jun'},
+  {city:'San Sebastián',name:'Arraun',hood:'Centro',type:'Cocktail bar',rating:'4.8',price:'€10–20',days:'1–2 Jun (evening)'},
+  {city:'San Sebastián',name:'Casa Julián',hood:'Tolosa · 30 min drive',type:'Legendary Basque grill · txuleta',rating:'4.6',price:'€100+',days:'3 Jun · confirmed reservation'},
+  // ── Madrid ──
+  {city:'Madrid',name:'Mercado de San Miguel',hood:'Centro / Plaza Mayor',type:'Iconic covered market · tapas & gourmet bites',rating:'4.4',price:'€€',days:'N/A'},
+  {city:'Madrid',name:'DIVORARE Focaccia',hood:'Barrio de las Letras',type:'Italian focaccia',rating:'4.8',price:'€10–20',days:'4 Jun'},
+  {city:'Madrid',name:'Sobrino de Botín',hood:'Barrio de las Letras',type:'World\'s oldest restaurant · cochinillo',rating:'4.3',price:'$$$',days:'5 Jun'},
+  {city:'Madrid',name:'Los 33 Restaurante',hood:'La Latina',type:'Grill',rating:'4.2',price:'$$$',days:'5 Jun'},
+  {city:'Madrid',name:'Bar La Campana',hood:'Plaza Mayor / La Latina',type:'Bar · calamari sandwich',rating:'4.5',price:'€1–10',days:'6 Jun'},
+];
+
+var _restActiveCity=null;
+function _restMapUrl(name,city){
+  return 'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(name+' '+city);
+}
+function _restCities(){
+  var seen={},out=[];
+  RESTAURANTS.forEach(function(r){if(!seen[r.city]){seen[r.city]=1;out.push(r.city);}});
+  return out;
+}
+function _restShowCity(city){
+  _restActiveCity=city;
+  document.querySelectorAll('.rest-city-btn').forEach(function(b){
+    b.classList.toggle('on',b.dataset.city===city);
+  });
+  var rows=RESTAURANTS.filter(function(r){return r.city===city;});
+  var trs=rows.map(function(r){
+    return '<tr>'
+      +'<td><div class="rest-name">'+esc(r.name)+'</div><div class="rest-hood">'+esc(r.hood)+'</div></td>'
+      +'<td class="rest-type">'+esc(r.type)+'</td>'
+      +'<td class="rest-rating">★ '+esc(r.rating)+'</td>'
+      +'<td class="rest-price">'+esc(r.price)+'</td>'
+      +'<td class="rest-days">'+esc(r.days)+'</td>'
+      +'<td><a class="rest-map" href="'+_restMapUrl(r.name,r.city)+'" target="_blank">Map</a></td>'
+      +'</tr>';
+  }).join('');
+  var body=document.getElementById('rest-body');
+  if(body)body.innerHTML='<table class="rest-tbl"><thead><tr>'
+    +'<th>Place</th><th>Type</th><th>Rating</th><th>Price</th><th>When</th><th></th>'
+    +'</tr></thead><tbody>'+trs+'</tbody></table>';
+}
+function _restInit(){
+  var cities=_restCities();
+  var tabs=document.getElementById('rest-city-tabs');
+  if(tabs)tabs.innerHTML=cities.map(function(c){
+    return '<button class="rest-city-btn" data-city="'+esc(c)+'" onclick="_restShowCity(\''+esc(c)+'\')">'+esc(c)+'</button>';
+  }).join('');
+  _restShowCity(_restActiveCity&&_restCities().indexOf(_restActiveCity)>=0?_restActiveCity:cities[0]);
+}
+function showRest(){
+  document.querySelectorAll('.city-panel').forEach(function(p){p.classList.remove('on');});
+  document.querySelectorAll('.city-tab').forEach(function(b){b.classList.remove('on');});
+  document.getElementById('budget-panel').classList.remove('on');
+  var rp=document.getElementById('rest-panel');
+  if(rp)rp.classList.add('on');
+  var rt=document.querySelector('.rest-tab');
+  if(rt)rt.classList.add('on');
+  _restInit();
+}
+
 function showBudget(){
   document.querySelectorAll('.city-panel').forEach(function(p){p.classList.remove('on');});
   document.querySelectorAll('.city-tab').forEach(function(b){b.classList.remove('on');});
+  var rp=document.getElementById('rest-panel');
+  if(rp)rp.classList.remove('on');
   var bp=document.getElementById('budget-panel');
   if(bp)bp.classList.add('on');
   var bt=document.querySelector('.budget-tab');
